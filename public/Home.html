@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v4.1.1">
+
+        <title>X-O {Game}</title>
+        <link rel="stylesheet" href="assets/style.css"/>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/">
+
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+
+        <!-- Bootstrap core CSS -->
+        <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/dist/css/sticky-footer-navbar.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand">MarwanElmallah Game</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="loginOut" href="Login.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <br><br>
+        <div class="game--container">
+            <div data-cell-index="0" class="cell"></div>
+            <div data-cell-index="1" class="cell"></div>
+            <div data-cell-index="2" class="cell"></div>
+            <div data-cell-index="3" class="cell"></div>
+            <div data-cell-index="4" class="cell"></div>
+            <div data-cell-index="5" class="cell"></div>
+            <div data-cell-index="6" class="cell"></div>
+            <div data-cell-index="7" class="cell"></div>
+            <div data-cell-index="8" class="cell"></div>
+        </div>
+        <div style="text-align: center;">
+            <h3 class="player1" style="color: white;"></h3>
+            <h3 class="player2" style="color: white;"></h3>
+            <h2 class="game--status" style="color: rgb(72, 255, 0);"></h2>
+            <button class="game--restart">Restart Game</button>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="inbox__messages">
+                    <div></div>
+                    <div class="fallback"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="panel panel-chat">
+                        <div class="panel-heading">
+                            <a href="#" class="chatMinimize" onclick="return false"><span id="myName" style="color:rgb(255, 255, 255);"></span><span style="color:rgb(0, 255, 106); float: right; margin-right: 5px;" id="mainCount">0</span><br><span style="color: cadetblue;">Online</span></a>
+                            <div class="clearFix"></div>
+                        </div>
+                        <div class="panel-body messages__history">
+                        </div>
+                        <div class="panel-footer">
+                            <form class="message_form">
+                                <input style="margin: 5px; height: 50px; width: 100%;" type="text"
+                                    class="message_form__input" placeholder="Type a message" />
+                                <br>
+                                <br>
+                                <button style="visibility: hidden;" class="message_form__button" type="submit">
+                                    Enter
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="assets/game.js"></script>
+    <script src="assets/home.js"></script>
+    <script>
+        if (readCookie("username") == "") {
+            document.getElementById("loginOut").innerHTML = "Login";
+            document.getElementById("loginOut").setAttribute("href", "Logout.html");
+        }
+    </script>
+</html>
